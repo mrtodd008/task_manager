@@ -19,23 +19,23 @@ function TaskForm({ addTask }) {
   };
 
   const handleDateChange = (date) => {
-    setTask({ ...task, due_date: date.format("YYYY-MM-DD") });
+    setTask({ ...task, event_date: date.format("YYYY-MM-DD") });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formattedTask = {
       ...task,
-      due_date: dayjs(task.due_date).format("YYYY-MM-DD"),
+      event_date: dayjs(task.due_date).format("YYYY-MM-DD"),
     };
     addTask(formattedTask);
-    setTask({ event: "", description: "", due_date: dayjs() });
+    setTask({ event: "", description: "", event_date: dayjs() });
   };
 
   return (
     <Paper elevation={3} style={{ padding: "20px" }}>
       <Typography variant="h6" gutterBottom>
-        Add New Task
+        Add New Event
       </Typography>
       <form onSubmit={handleSubmit}>
         <Grid container spacing={2}>
