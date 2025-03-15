@@ -1,0 +1,33 @@
+{
+  "name": "task_manager",
+  "version": "1.0.0",
+  "description": "Task Manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrtodd008/task_manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrtodd008/task_manager/issues"
+  },
+  "homepage": "https://github.com/mrtodd008/task_manager#readme",
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.4.7",
+    "@mui/x-date-pickers": "^7.27.3",
+    "axios": "^1.8.3",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql2": "^3.13.0",
+    "react-error-boundary": "^5.0.0"
+  }
+}
