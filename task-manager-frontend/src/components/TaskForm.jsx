@@ -8,9 +8,9 @@ import dayjs from "dayjs";
 
 function TaskForm({ addTask }) {
   const [task, setTask] = useState({
-    title: "",
+    event: "",
     description: "",
-    due_date: dayjs(),
+    event_date: dayjs(),
   });
 
   const handleChange = (e) => {
@@ -29,7 +29,7 @@ function TaskForm({ addTask }) {
       due_date: dayjs(task.due_date).format("YYYY-MM-DD"),
     };
     addTask(formattedTask);
-    setTask({ title: "", description: "", due_date: dayjs() });
+    setTask({ event: "", description: "", due_date: dayjs() });
   };
 
   return (
@@ -42,8 +42,8 @@ function TaskForm({ addTask }) {
           <Grid item xs={12}>
             <TextField
               fullWidth
-              label="Title"
-              name="title"
+              label="Event"
+              name="Event"
               value={task.title}
               onChange={handleChange}
             />
@@ -61,7 +61,7 @@ function TaskForm({ addTask }) {
           <Grid item xs={12}>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DatePicker
-                label="Due Date"
+                label="Event Date"
                 value={dayjs(task.due_date)}
                 onChange={handleDateChange}
                 format="YYYY-MM-DD"
@@ -70,7 +70,7 @@ function TaskForm({ addTask }) {
           </Grid>
           <Grid item xs={12}>
             <Button type="submit" variant="contained" color="primary">
-              Add Task
+              Add Event
             </Button>
           </Grid>
         </Grid>

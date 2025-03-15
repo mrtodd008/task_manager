@@ -36,7 +36,7 @@ function TaskItem({ task, updateTask, deleteTask }) {
   const handleSave = () => {
     const formattedTask = {
       ...editedTask,
-      due_date: dayjs(editedTask.due_date).format("YYYY-MM-DD"),
+      event_date: dayjs(editedTask.due_date).format("YYYY-MM-DD"),
     };
     updateTask(formattedTask.id, formattedTask);
     setIsEditing(false);
@@ -53,7 +53,7 @@ function TaskItem({ task, updateTask, deleteTask }) {
   };
 
   const handleDateChange = (date) => {
-    setEditedTask({ ...editedTask, due_date: date.format("YYYY-MM-DD") });
+    setEditedTask({ ...editedTask, event_date: date.format("YYYY-MM-DD") });
   };
 
   const getStatusColor = (status) => {
@@ -100,7 +100,7 @@ function TaskItem({ task, updateTask, deleteTask }) {
           )}
         </Typography>
         <Typography variant="caption" color="text.secondary">
-          Due Date:{" "}
+          Event Date:{" "}
           {isEditing ? (
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DatePicker
